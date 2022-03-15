@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^5.0.0",
+    "firebase": "^9.6.8",
+    "fluent-ffmpeg": "^2.1.2",
+    "request": "^2.88.2",
+    "socket.io": "^4.4.1",
+    "ytdl-core": "^4.11.0"
+  }
+}
