@@ -25,7 +25,8 @@ module.exports = async({ stream, info }, socket) => {
     .on('start', () => {
       console.log('Conversão iniciada!');
       socket.emit('convert', {
-        status: 'start'
+        status: 'start',
+				videoName: info.videoDetails.title
       })
     })
     .on('end', () => {

@@ -15,6 +15,11 @@ const PORT = process.env.PORT || 3001;
 let socketOn = false;
 
 app.use(cors());
+
+app.get("/", function(req, res) {
+	res.send('Rota inicial')
+})
+
 app.get("/start", function (req, res) {
   let io = serverSocket;
 
@@ -25,10 +30,9 @@ app.get("/start", function (req, res) {
 
       socket.on("videourl", async (videourl) => {
         console.log("Video recebido");
-        const dataFromYT = await getDataFromYT(videourl.yturl);
-        const converterFfmpeg = await convertToMp3(dataFromYT, socket);
-
-        audioList.push(converterFfmpeg);
+       	const dataFromYT = await getDataFromYT(videourl.yturl);
+       	const converterFfmpeg = await convertToMp3(dataFromYT, socket);
+       	audioList.push(converterFfmpeg);
       });
 
       socket.on("disconnect", async () => {
